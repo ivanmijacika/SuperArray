@@ -39,5 +39,25 @@ public class SuperArray{
 	data = resized;
     }
 
+    public boolean isEmpty(){
+	return size()==0;
+    }
+
+    public String toString(){
+	String s = "[";
+	for (int i=0; i<size; i++){
+	    if (i!=size-1) s+=String.valueOf(data[i])+", ";
+	    else s+=String.valueOf(data[i]);
+	}
+	return s+"]";
+    }
+
+    public boolean contains(String s){
+	for (int i=0; i<size; i++){
+	    if (data[i].equals(s)) return true;
+	}
+	return false;
+    }
+
 }
 
