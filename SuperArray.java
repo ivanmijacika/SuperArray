@@ -10,6 +10,10 @@ public class SuperArray{
 	size = 0;
     }
 
+    public SuperArray(int InitialCapacity){
+	data = new String[InitialCapacity];
+    }
+
     public int size(){
 	return size;
     }
@@ -63,5 +67,26 @@ public class SuperArray{
 	String[] a = new String[data.length];
 	data = a;
     }
+
+    public void add(int index, String element){
+	if (size==data.length) resize();
+	String[] added = new String[data.length];
+	added[index] = element;
+	for(int i=0; i<size; i++){
+	    if (i>=index) added[i+1]=data[i];
+	    else added[i]=data[i];
+	}
+	data = added;
+    }
+
+    //public String remove(int index){
+    //}
+
+    //public int indexOf(){
+    //}
+
+    //public String[] to Array(){
+    //}
+
 }
 
