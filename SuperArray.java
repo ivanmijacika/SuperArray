@@ -59,5 +59,9 @@ public class SuperArray{
 	return false;
     }
 
+    public void clear(){
+	String[] a = new String[data.length];
+	data = a;
+    }
 }
 
