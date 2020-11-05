@@ -101,9 +101,11 @@ public class SuperArray{
 	return arr;
     }
 
-    //public static void removeDuplicates(SuperArray s){
-//	String[] arr = new String[data.length]
-  //  }
+    public static void removeDuplicates(SuperArray s){
+	for (int i=0; i<s.size;){
+	    if (s.indexOf(s.data[i]) == i) i++;
+	    else s.remove(i);
+	}
+    }
 
 }
-
