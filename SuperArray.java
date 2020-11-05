@@ -95,8 +95,13 @@ public class SuperArray{
 	return -1;
     }
 
-    //public String[] to Array(){
-    //}
+    public String[] toArray(){
+	String[] arr = new String[size];
+	for (int i=0; i<size; i++){
+	    arr[i] = data[i];
+	}
+	return arr;
+    }
 
 }
 
