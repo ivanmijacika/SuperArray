@@ -70,13 +70,11 @@ public class SuperArray{
 
     public void add(int index, String element){
 	if (size==data.length) resize();
-	String[] added = new String[data.length];
-	added[index] = element;
-	for(int i=0; i<size; i++){
-	    if (i>=index) added[i+1]=data[i];
-	    else added[i]=data[i];
+	for (int i=size-1; i>=index; i--){
+	    data[i+1] = data[i];
 	}
-	data = added;
+	data[index] = element;
+	size++;
     }
 
     public String remove(int index){
@@ -102,6 +100,10 @@ public class SuperArray{
 	}
 	return arr;
     }
+
+    //public static void removeDuplicates(SuperArray s){
+//	String[] arr = new String[data.length]
+  //  }
 
 }
 
