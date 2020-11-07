@@ -47,6 +47,7 @@ public class Demo{
     removeDuplicates(words);
     System.out.println(words);
 
+/*
     SuperArray array1 = new SuperArray(4);
     array1.add("1");
     array1.add("2");
@@ -59,6 +60,9 @@ public class Demo{
     array2.add("2");
 
     System.out.println(findOverlap(array1, array2));
+    System.out.println(zip(array1, array2));
+    System.out.println(zip(array2, array1));
+*/
   }
 
 }
