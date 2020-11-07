@@ -16,12 +16,32 @@ public class Demo{
     return overlap;
   }
 
+  public static SuperArray zip(SuperArray a, SuperArray b){
+    SuperArray c = new SuperArray(a.size() + b.size());
+    int m = Math.min(a.size(), b.size());
+    for (int i=0; i<m; i++){
+      c.add(a.get(i));
+      c.add(b.get(i));
+    }
+    if (m==a.size()){
+      for (int i=m; i<b.size(); i++){
+	c.add(b.get(i));
+      }
+    }
+    else {
+      for (int i=m; i<a.size(); i++){
+	c.add(a.get(i));
+      }
+    }
+    return c;
+  }
+
   public static void main(String[]args){
     SuperArray words = new SuperArray();
     //grouped to save vertical space
     words.add("kani");   words.add("uni");     words.add("ebi");     words.add("una");     
     words.add("una");    words.add("ebi");     words.add("kani");    words.add("una");
-    words.add("una");    words.add("ebi");     words.add("toro"); 
+    words.add("una");    words.add("ebi");     words.add("toro");
 
     System.out.println(words);
     removeDuplicates(words);
