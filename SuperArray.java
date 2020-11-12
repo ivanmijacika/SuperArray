@@ -90,6 +90,9 @@ public class SuperArray{
     }
 
     public String remove(int index){
+	if (index<0 || index>size()){
+	    throw new IndexOutOfBoundsException("Index "+index+" out of bounds");
+	}
 	String e = data[index];
 	for (int i=index+1; i<size; i++){
 	    data[i-1]=data[i];
