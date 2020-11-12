@@ -28,6 +28,9 @@ public class SuperArray{
     }
 
     public String get(int index){
+	if (index<0 || index>=size()){
+	    throw new IndexOutOfBoundsException("Index "+index+" out of bounds");
+	}
 	return data[index];
     }
 
